@@ -26,7 +26,6 @@ ERROR_NO_FREE_STORE =	 103
 | public symbols
 
 		.globl	__exit
-
 		.text
 
 | first entry - check for cli or wb start
@@ -93,7 +92,6 @@ no_reloc:	lea	a4@(0x7ffe:W),a4
 		addqw	#4,a2
 		moveql	#-1,d2
 		jbsr	callfuncs
-
 		movel	a4@(___env:W),sp@-
 		movel	a4@(___argv:W),sp@-
 		movel	a4@(___argc:W),sp@-

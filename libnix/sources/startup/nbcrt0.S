@@ -17,7 +17,7 @@ pr_CLI		=	 172
 
 		.globl	__exit
 		.globl	_geta4
-
+		.global ___restore_a4
 		.text
 
 | first entry - init some vars, check for cli or wb start
@@ -57,7 +57,6 @@ fromCLI:	lea	a4@(___INIT_LIST__:W),a2
 		addqw	#4,a2
 		moveql	#-1,d2
 		jbsr	callfuncs
-
 		movel	a4@(___env:W),sp@-
 		movel	a4@(___argv:W),sp@-
 		movel	a4@(___argc:W),sp@-
@@ -115,6 +114,7 @@ oldpri: 	movel	a3@+,d0
 
 | get baseptr
 
+___restore_a4:		
 _geta4: 	lea	___a4_init,a4
 		rts
 
