@@ -1,8 +1,6 @@
 libnix: C link library for AmigaOS/m68k
 ===
 
-**Maintainer:** [Krystian Bacławski](mailto:krystian.baclawski@gmail.com)
-
 **Short description:** Fork of [libnix](http://sourceforge.net/projects/libnix/) from [sourceforge.net](http://sourceforge.net).
 
 ## Overview
