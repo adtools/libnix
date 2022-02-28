@@ -63,7 +63,7 @@ libm.a: $(foreach f,$(SUBDIRS2),$(CURDIR)/$(f)) $(OBJECTS2) ../../sources/math/M
 	-rm -f $@
 	$(AR) -q $@ $(OBJECTS2)
 	$(RANLIB) $@
-	echo "\$$$(V)" >>$@
+#	echo "\\$$$(V)" >>$@
 
 stdio/vfprintf.o: $(srcdir)/../nix/stdio/vfprintf.c
 	$(CC) $(OPTIONS) $^ -c -o stdio/vfprintf.o
