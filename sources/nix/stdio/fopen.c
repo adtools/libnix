@@ -19,6 +19,7 @@ FILE *fopen(const char *filename,const char *mode)
   { if((node->FILE.buffer=(char *)malloc(BUFSIZ))!=NULL)
     { node->FILE.bufsize=BUFSIZ;
       node->FILE.flags|=__SMBF; /* Buffer is malloc'ed */
+      node->FILE.file = -1;
       if(freopen(filename,mode,&node->FILE)!=NULL)
       { AddHead((struct List *)&__filelist,(struct Node *)&node->node);
         return &node->FILE; }

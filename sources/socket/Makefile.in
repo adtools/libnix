@@ -71,4 +71,4 @@ libsocket.a: $(foreach f,$(SUBDIRS2),$(CURDIR)/$(f)) $(OBJECTS2) ../../sources/s
 	-rm -f $@
 	$(AR) -q $@ $(OBJECTS2)
 	$(RANLIB) $@
-	echo "\$$$(V)" >>$@
+#	echo "\\$$$(V)" >>$@

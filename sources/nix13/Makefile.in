@@ -49,8 +49,11 @@ veryclean:
 $(foreach f,$(SUBDIRS),$(CURDIR)/$(f)):
 	mkdir $@
 
+# hack to add swapstack.o into libnix13.a:
+OBJECTS += ../misc/swapstack.o
+
 libnix13.a: $(foreach f,$(SUBDIRS),$(CURDIR)/$(f)) $(OBJECTS) ../../sources/nix13/Makefile ../../sources/nix13/filelist
 	-rm -f $@
 	$(AR) -q $@ $(OBJECTS)
 	$(RANLIB) $@
-	echo "\$$$(V)" >>$@
+#	echo "\\$$$(V)" >>$@
